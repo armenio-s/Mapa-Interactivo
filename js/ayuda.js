@@ -29,6 +29,21 @@ $(document).ready(function () {
   })
 })
 
+// Borra un item de la lista de destinos intermedios.
+$(function () {
+  $("#borrar-item").bind("click", function() {
+    $("#puntosIntermedios option:selected").remove();
+  });
+})
+
+// Borra la lista completa de destinos intermedios.
+$(function () {
+  $("#borrar-lista").on("click", function() {
+    $("#puntosIntermedios").empty();
+  })
+})
+$( "#paleta" ).empty();
+
 // muestra el valor indicado por el selector radioS
 function mostrarValor (n) {
   document.querySelector('#radioS').value = n + ' mts'

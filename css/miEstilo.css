@@ -6,15 +6,21 @@ body {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 14px!important;
     color: #000;
+}
+
+select#tipoDeLugar,
+select#comoIr {
+    background: url(../imagenes/selector.png) no-repeat 96% center;
 }
 
 select,
 input {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
     padding: 0;
     border: none;
     -webkit-appearance: none;
@@ -35,45 +41,51 @@ output {
 
 .btn {
     border-radius: 5px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
     text-transform: uppercase;
     line-height: 30px;
     cursor: pointer;
     transition: all .5s ease;
-    color: #fff;
-}
-
-.btn-default {
-    background: #4b858a;
+    background-color: #4285F4;
+    width: 100%;
+    height: 44px;
 }
 
 .btn-outline {
     width: 100%;
-    border: solid 1px #4b858a;
-    color: #4b858a;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    border: solid 1px #4285F4;
+    color: #4285F4;
     background: transparent;
 }
 
-.btn-outline:hover {
-    border-color: #285e63;
-}
-
 .btn:hover {
-    background: #285e63;
-    color: #d2e6e8;
+    -webkit-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    -moz-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4); 
 }
 
 .btn-outline:last-child {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .from-to {
     position: relative;
+    width: 80%;
     display: block;
+    margin: 10px auto;
+    border-radius: 6px;
     min-height: 72px;
     padding: 12px 20px;
     position: relative;
-    background: #c2d5d7;
+    background: #ffffff;
     margin-bottom: 12px;
+    -webkit-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    -moz-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4); 
 }
 
 .pac-container {
@@ -86,7 +98,11 @@ output {
 }
 
 #puntosIntermedios {
-    width: calc(100% - 50px);
+    width: calc(100% - 33px);
+    height: 100px!important;
+    margin: 0 0 6px 0;
+    border: 1px solid #f4f4f4;
+    border-radius: 6px;
 }
 
 .select-circle {
@@ -114,11 +130,11 @@ output {
     background-size: 4px;
     content: '';
     display: block;
-    height: 28px;
+    height: 42px;
     position: absolute;
     width: 4px;
     left: -27px;
-    top: 50%;
+    top: 42%;
     margin-top: -13px;
 }
 
@@ -143,31 +159,46 @@ output {
 
 .from-to select,
 #comoIr,
-#tipoDeLugar,
-#direccion,
-#agregar {
+#tipoDeLugar {
     background: 0 0;
-    border: none;
-    height: 30px;
-    outline: 0;
+    border: 1px solid #f4f4f4;
+    height: 48px;
+    padding-left: 14px;
+    border-radius: 6px;
     overflow: hidden;
     position: relative;
     text-overflow: ellipsis;
     vertical-align: baseline;
-    width: calc(100% - 70px);
+    width: 100%;
+}
+
+#agregar,
+#direccion {
+    background: 0 0;
+    border: 1px solid #f4f4f4;
+    height: 48px;
+    padding-left: 14px;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    vertical-align: baseline;
+    width: 95%;
 }
 
 .input-label,
 label {
+    font-family: 'Noto Sans', sans-serif;
     font-size: 12px;
     color: #000;
     display: inline-block;
-    font-weight: 700;
+    font-weight: 400;
     height: 100%;
 }
 
 #labelIntermedios {
-    padding-top: 10px;
+    padding-top: 20px;
+    font-size: 14px;
 }
 
 .input-label {
@@ -180,6 +211,7 @@ label {
 .radio-metros {
     height: 30px;
     line-height: 20px;
+    margin-bottom: 20px;
 }
 
 .slider {
@@ -190,7 +222,7 @@ label {
     height: 2px;
     outline: none;
     border-radius: 2px;
-    background: #7A7C7F;
+    background: #4285F4;
     vertical-align: middle;
 }
 
@@ -200,8 +232,8 @@ label {
     appearance: none;
     width: 10px;
     height: 10px;
-    background-color: #d2e6e8;
-    border: 2px solid #7A7C7F;
+    background-color: #ffffff;
+    border: 2px solid #4285F4;
     border-radius: 1rem;
     cursor: pointer;
 }
@@ -214,25 +246,21 @@ label {
     overflow: hidden;
 }
 
-#puntosIntermedios {
-    height: 60px;
-    padding: 2px 0;
-}
-
 .arrows {
-    width: 45px;
+    height: 100px;
+    width: 25px;
     display: inline-block;
     position: relative;
     vertical-align: top;
-    background: #4b858a;
 }
 
 .arrows input[type=button] {
     text-align: left;
     text-indent: 10px;
     font-size: 10px;
-    width: 45px;
+    width: 25px;
     display: block;
+    height: 50px;
     padding: 0;
     color: transparent;
     position: relative;
@@ -247,13 +275,67 @@ label {
 .down:before {
     position: absolute;
     cursor: pointer;
-    width: 12px;
-    right: 16px;
+    width: 100%;
+    margin-top: 10px;
     z-index: 2;
     text-align: center;
     line-height: 30px;
     font-size: 12px;
     backface-visibility: hidden;
+}
+
+.arriba,
+.abajo {
+    background-color:#4285F4;
+}
+
+.arriba {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.arriba:hover {
+    -webkit-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    -moz-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+}
+
+.aclaracion {
+    font-size: 12px;
+    color: #707070;
+}
+
+#borrar-item,
+#borrar-lista {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: rgb(125, 145, 177);
+    border: none;
+    border-radius: 6px;
+    width: 49%;
+    text-transform: uppercase;
+    padding: 5px 0 5px 0;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#borrar-item:hover,
+#borrar-lista:hover {
+    -webkit-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    -moz-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+}
+
+.abajo:hover {
+    -webkit-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    -moz-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+}
+
+.abajo {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 
 .up:before {
@@ -273,6 +355,7 @@ label {
 
 #map {
     height: 100%;
+
 }
 
 #pano {
@@ -280,33 +363,81 @@ label {
     position: absolute;
     z-index: 10;
     bottom: 0;
-    width: calc(100% - 320px);
+    width: calc(100% - 360px);
     right: 0;
     visibility: hidden;
 }
 
 #left-panel {
+    overflow-y: auto;
+    overflow-x: hidden;
     float: left;
     text-align: left;
-    background: #d2e6e8;
+    background: #fafafa;
     height: 100%;
-    width: 320px;
+    width: 360px;
 }
 
 .input-choose {
+    display: block;
+    width: 80%;
+    border-radius: 6px;
+    padding: 20px!important;
+    margin: auto;
     padding: 0 20px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    -moz-box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4);
+    box-shadow: 0px 4px 17px -11px rgba(51,51,51,0.4); 
 }
 
 .directions {
     margin-top: 15px;
-    overflow-y: scroll;
-    height: calc(100% - 478px);
-    font-size: 13px;
+    
 }
 
 #directions-panel-summary .adp {
     background: #f1f1f1;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
+}
+
+.adp {
+    background-color: #fafafa!important;
+}
+
+div.adp-summary {
+    font-size: 20px!important;
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 10px;
+}
+
+.adp-text {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    padding-left: 10px!important;
+}
+
+.adp-placemark {
+    border: 0!important;
+    background-color: transparent;
+}
+
+.adp-directions {
+    font-family: 'Noto Sans', sans-serif!important;
+}
+
+.adp-substep {
+    padding: 10px;
+}
+
+input#desde,
+input#hasta {
+    border: 1px solid #f4f4f4;
+    width: 90%;
+    height: 48px;
+    border-radius: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 @media only screen and (max-width: 600px) {

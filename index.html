@@ -5,38 +5,40 @@
     <title>Mapa Interactivo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700&display=swap" rel="stylesheet">
     <script src="js/jquery-3.2.0.js"></script>
     <link rel="stylesheet" type="text/css" href="css/miEstilo.css">
     <script src="js/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+    <link rel="shortcut icon" type="image/png" href="/imagenes/worldwide.png"/>
 </head>
 
 <body>
     <div id="left-panel">
+        <!-- Buscador principal -->
         <div class="from-to">
-            <div class="medios"> <span class="input-label">Buscar:</span>
-                <input id="direccion" type="textbox" value="" placeholder="Ingresa una dirección &#9166">
+            <div class="medios">
+                <input aria-label="Buscar una direccion en el mapa" id="direccion" type="textbox" value=""placeholder="Buscar en el mapa">
             </div>
             <div class="select-circle">
                 <div class="circle from">
-                    <span class="input-label">Desde:</span>
-                    <input type="textbox" id="desde" placeholder="Ingresa una dirección  &#9166">
+                    <input aria-label="Punto de partida" type="textbox" id="desde" placeholder="Ingresá un punto de partida">
                 </div>
                 <div class="circle to">
-                    <span class="input-label">Hasta:</span>
-                    <input type="textbox" id="hasta" placeholder="Ingresa una dirección &#9166">
+                    <input aria-label="Destino" type="textbox" id="hasta" placeholder="Ingresá un destino">
                 </div>
             </div>
         </div>
+        <!-- Opciones -->
         <div class="input-choose">
-            <div class="medios"> <span class="input-label">Lugar:</span>
+            <div class="medios">
                 <select id="tipoDeLugar">
                     <option value="">Elegir tipo de lugar</option>
                 </select>
             </div>
-            <div class="medios"> <span class="input-label">Como:</span>
-                <select id="comoIr">
+            <div class="medios">
+                <select aria-label="Elegir un medio de transporte"id="comoIr">
+                    <option value="">Elegí un medio de transporte</option>
                     <option value='Auto'> Auto </option>
                     <option value='Caminando'> Caminando </option>
                     <option value='Bus/Subterraneo/Tren'> Transporte Público </option>
@@ -44,22 +46,23 @@
             </div>
             <div class="hide-xs">
                 <div class='agregarPts'>
-                    <span class="input-label">Agregar:</span>
-                    <input type="textbox" id="agregar" placeholder="Ingresa una dirección &#9166">
+                    <input type="textbox" id="agregar" placeholder="Agregá una dirección">
                 </div>
-                <label id="labelIntermedios">Lugares Intermedios
+                <label id="labelIntermedios">Destinos Intermedios
                     <br>
-                    <i>(Hacé Ctrl-Click para seleccionar varios)</i> </label>
+                    <i class="aclaracion">(Hacé Ctrl-Click para seleccionar varios)</i> </label>
                 <div class="intermedios">
                     <div class="arrows">
                         <div class="up">
-                            <input type="button" value="Up" class="btn btn-default"> </div>
+                            <input type="button" value="Up" class="arriba"> </div>
                         <div class="down">
-                            <input type="button" value="down" class="btn btn-default">
+                            <input type="button" value="down" class="abajo">
                         </div>
                     </div>
                     <select multiple id="puntosIntermedios" class="lugares">
                     </select>
+                    <button id="borrar-item">borrar item</button>
+                    <button id="borrar-lista">borrar lista</button>
                 </div>
                 <div class="radio-metros">
                     <label for="radio">Radio</label>
@@ -69,7 +72,7 @@
                 <div>
                 </div>
             </div>
-            <input type="submit" id="calcularMuchos" value="Calcular Ruta" class="btn btn-outline">
+            <input role="button" type="submit" id="calcularMuchos" value="Calcular Ruta" class="btn">
             <button class="btn btn-outline" onclick="mostrarOcultarPano()">Ocultar/Mostrar StreetView</button>
         </div>
         <div class="directions">
@@ -87,8 +90,9 @@
     <script src='js/lugares.js'></script>
     <script src='js/ayuda.js'></script>
     <script src='js/apis.js'></script>
-    <!-- Modificá "CLAVEAPI" por la clave que hayas obtenido -->
-    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBq06kLGfopr2gVg_lj-Gs7oLy3g-9nsxU&libraries=places&callback=inicializarMapa" async defer></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBq06kLGfopr2gVg_lj-Gs7oLy3g-9nsxU&libraries=places&callback=inicializarMapa"
+        async defer></script>
 </body>
 
 </html>
