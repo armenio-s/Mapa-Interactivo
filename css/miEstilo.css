@@ -419,7 +419,7 @@ div.adp-summary {
 
 .adp-placemark {
     border: 0!important;
-    background-color: transparent;
+    background: transparent!important;
 }
 
 .adp-directions {

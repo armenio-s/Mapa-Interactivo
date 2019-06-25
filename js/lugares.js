@@ -73,14 +73,25 @@ const lugaresModulo = (function() {
   // Busca lugares con el tipo especificado en el campo de TipoDeLugar
 
   function buscarCerca(posicion) {
-    let request = {
+    /*let request = {
       location: posicion,
       radius: parseInt($("#radioS").text()).toString(),
       types: [$("#tipoDeLugar")[0].value]
     };
 
     this.servicioLugares.nearbySearch(request, marcadorModulo.marcarLugares);
-  }
+  }*/
+  let tipoDeLugar = document.getElementById("tipoDeLugar").value;
+
+  let servicio = new google.maps.places.PlacesService(mapa);
+  servicio.nearbySearch({
+    location: posicion,
+    radius: 1500,
+    type: [tipoDeLugar]
+  }, function (results, status) {
+    marcadorModulo.marcarLugares(results, status)
+  })
+  };
 
   return {
     inicializar,

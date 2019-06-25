@@ -6,11 +6,11 @@ marcadorModulo = (function() {
   var infoVentana; // La ventana con información
 
   function mostrarMiMarcador(ubicacion) {
-    this.miMarcador = new google.maps.Marker({
+    miMarcador = new google.maps.Marker({
       position: ubicacion,
       map: mapa,
       animation: google.maps.Animation.DROP,
-      title: direccion
+      title: document.getElementById("direccion").value
     });
   }
 
@@ -28,9 +28,9 @@ marcadorModulo = (function() {
     }
   }
 
-  /*function mostrarMarcadores(marcadores) {
+  function mostrarMarcadores(marcadores) {
     marcadoresEnMapa(marcadores, mapa);
-  }*/
+  }
 
   function noMostrarMarcadores(marcadores) {
     marcadoresEnMapa(marcadores, null);
@@ -41,13 +41,13 @@ marcadorModulo = (function() {
     marcadores = [];
   }
 
-  /*function borrarMarcadoresRuta(marcadores) {
+  function borrarMarcadoresRuta(marcadores) {
     borrarMarcadores(marcadoresRuta);
   }
 
   function borrarMarcadoresLugares(marcadores) {
     borrarMarcadores(marcadoresLugares);
-  }*/
+  }
 
   var tipoDeLugar = document.getElementById("tipoDeLugar");
   tipoDeLugar.addEventListener("change", function() {
@@ -218,7 +218,7 @@ marcadorModulo = (function() {
     borrarMarcadores(marcadores);
     console.log("lugar: " + document.getElementById("tipoDeLugar").value);
     if (marcadorModulo.existeMiMarcador()) {
-      var miPosicion = marcadorModulo.damePosicion();
+      var miPosicion = marcadorModulo.darPosicion();
     } else {
       miPosicion = posicionCentral;
     }

@@ -1,6 +1,6 @@
 var mapa 
 
-var posicionCentral = {
+let posicionCentral = {
   lat: -34.608856,
   lng: -58.370131
 }
@@ -9,7 +9,10 @@ var zoomInicial = 14;
 
 function inicializarMapa () {
     mapa = new google.maps.Map(document.getElementById('map'), {
-      center: posicionCentral,
+      center: {
+        lat: -34.608856,
+        lng: -58.370131
+      },
       zoom: zoomInicial,
       styles: [
         {
